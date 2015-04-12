@@ -24,7 +24,7 @@ WORKDIR $setup_dir
 ADD pintos-misc $setup_dir/pintos/src/misc/
 ADD pintos-utils $setup_dir/pintos-utils/
 
-ADD http://ftp.jaist.ac.jp/pub/sourceforge/b/project/bo/bochs/bochs/2.2.6/bochs-2.2.6.tar.gz $setup_dir/bochs-2.2.6.tar.gz
+ADD http://jaist.dl.sourceforge.net/project/bochs/bochs/2.2.6/bochs-2.2.6.tar.gz $setup_dir/bochs-2.2.6.tar.gz
 
 RUN SRCDIR=$setup_dir DSTDIR=/usr/ PINTOSDIR=$setup_dir/pintos $setup_dir/pintos/src/misc/bochs-2.2.6-build.sh
 
