@@ -28,6 +28,10 @@ ADD http://jaist.dl.sourceforge.net/project/bochs/bochs/2.2.6/bochs-2.2.6.tar.gz
 
 RUN SRCDIR=$setup_dir DSTDIR=/usr/ PINTOSDIR=$setup_dir/pintos $setup_dir/pintos/src/misc/bochs-2.2.6-build.sh
 
+ADD http://pkgs.repoforge.org/qemu/qemu-0.15.0-1.el6.rfx.x86_64.rpm $setup_dir/qemu-0.15.0-1.el6.rfx.x86_64.rpm
+RUN yum install -y libGL SDL libaio alsa-lib bluez-libs celt051 esound-libs gnutls libjpeg-turbo pixman libpng pulseaudio-libs spice-server qemu-img
+RUN rpm -i $setup_dir/qemu-0.15.0-1.el6.rfx.x86_64.rpm
+
 WORKDIR $setup_dir/pintos-utils/
 RUN make
 
